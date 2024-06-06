@@ -15,7 +15,7 @@ const MessageSender = (props: any) => {
 
     useEffect(() => {
         if (textareaRef?.current) {
-            textareaRef.current.style.height = '44px'
+            textareaRef.current.style.height = '15px'
             textareaRef.current.style.height = textareaRef.current.scrollHeight + 'px'
         }
     }, [text])
