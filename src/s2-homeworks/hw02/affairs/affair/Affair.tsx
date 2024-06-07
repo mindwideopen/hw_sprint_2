@@ -8,7 +8,7 @@ type AffairPropsType = {
     // key не нужно типизировать
     affair: AffairType
     deleteAffairCallback: (id: number) => void // need to fix any
-    data: AffairType[]
+
 
 }
 
