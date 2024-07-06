@@ -56,6 +56,8 @@ function HW2() {
         setAffairs(deleteAffair(affairs, _id))
     }
 
+    console.log('filteredAffairs', filteredAffairs, defaultAffairs)
+
     return (
         <div id={'hw2'}>
             <div className={s2.hwTitle}>Homework #2</div>

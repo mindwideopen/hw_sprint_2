@@ -18,7 +18,11 @@ const Stand = () => {
                     <SuperInputText
                         id={'hw4-super-input-like-old'}
                         value={stateForAllInputs}
-                        onChange={(e) => setValue(e.currentTarget.value)}
+                        onChange={(e) => {
+
+                            setValue(e.currentTarget.value)
+                    setError('')}
+                        }
                     />
                 </div>
                 {/*инпут с ошибкой:*/}
@@ -26,16 +30,18 @@ const Stand = () => {
                     <SuperInputText
                         id={'hw4-super-input-with-error'}
                         value={stateForAllInputs}
-                        onChangeText={setValue}
+                        onChangeText={(e) => {
+                            setValue(e)
+                            setError('')
+                        }}
+
+
                         error={error}
                         onEnter={() => {
-                            setError(
-                                stateForAllInputs.trim()
-                                    ? ''
-                                    : 'Error'
-                            )
+                            setError(stateForAllInputs.trim() ? '': 'Error' )
                             setValue('')
                         }}
+
                     />
                 </div>
             </div>
@@ -44,13 +50,14 @@ const Stand = () => {
                 {/*обычная кнопка:*/}
                 <div>
                     <SuperButton id={'hw4-super-button-default'}>
-                        default
+                        Дефолтная
                     </SuperButton>
                 </div>
                 {/*красная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-red'} xType={'red'}>
-                        red
+                    <SuperButton id={'hw4-super-button-red'}
+                                 xType={'red'}>
+                        Опасность
                     </SuperButton>
                 </div>
                 {/*задизэйбленная кнопка:*/}
@@ -60,7 +67,7 @@ const Stand = () => {
                         xType={'red'}
                         disabled
                     >
-                        disabled
+                        Не активна
                     </SuperButton>
                 </div>
                 {/*задизэйбленная кнопка:*/}
@@ -69,7 +76,7 @@ const Stand = () => {
                         id={'hw4-super-button-secondary'}
                         xType={'secondary'}
                     >
-                        secondary
+                        Дополнительная
                     </SuperButton>
                 </div>
             </div>
