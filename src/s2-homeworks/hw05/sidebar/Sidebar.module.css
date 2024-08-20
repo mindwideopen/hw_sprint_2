@@ -1,25 +1,51 @@
 .sidebar {
+    width: 200px;
+    border: 1px solid black;
+    left: -200px;
+    background-color: aquamarine;
+    position: absolute;
+
+
 }
 
 .sidebar.open {
+    left: 0;
+    height: 100%;
+    z-index: 2;
 }
 
 .background {
 }
 
 .nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 100px
+
 }
 
 .nav a {
 }
 
+
 .nav a:hover {
+   color: white;
+}
+.nav a.active {
+    color: red;
 }
 
-.nav a.active {
-}
+
 .close {
+    position: absolute;
+    right: 0;
 }
 
 .close img {
+
+}
+
+.active {
+    font-size: 25px;
 }
