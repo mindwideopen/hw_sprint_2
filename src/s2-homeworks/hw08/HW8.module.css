@@ -8,6 +8,7 @@
 }
 
 .buttonsContainer {
+    display: flex;
 }
 
 .container {

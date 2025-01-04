@@ -4,6 +4,7 @@ import s from './HW8.module.css'
 import s2 from '../../s1-main/App.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import User from './User'
+import {log} from "node:util";
 
 /*
 * 1 - дописать типы и логику (сортировка по имени, фильтрация по совершеннолетию) homeWorkReducer, проверить тестом
@@ -30,10 +31,11 @@ const initialPeople: UserType[] = [
 const HW8 = () => {
     const [people, setPeople] = useState<UserType[]>(initialPeople)
     const [currentSort, setCurrentSort] = useState('')
-
     const finalPeople = people.map((u: UserType) => <User key={u._id} u={u}/>)
 
+
     const sortUp = () => {
+
         setPeople(
             homeWorkReducer(initialPeople, {type: 'sort', payload: 'up'})
         ) // в алфавитном порядке a.name > b.name
@@ -41,17 +43,21 @@ const HW8 = () => {
     }
 
     const sortDown = () => {
+
         setPeople(
             homeWorkReducer(initialPeople, {type: 'sort', payload: 'down'})
         ) // в обратном порядке a.name < b.name}
         setCurrentSort('down')
     }
     const check18 = () => {
+
         setPeople(
+
             homeWorkReducer(initialPeople, {type: 'check', payload: 18})
         ) // совершеннолетние
         setCurrentSort('18')
     }
+
 
     return (
         <div id={'hw3'}>
