@@ -1,4 +1,8 @@
 .buttonsContainer {
+    margin-top: 17px;
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
 }
 
 .clock {
