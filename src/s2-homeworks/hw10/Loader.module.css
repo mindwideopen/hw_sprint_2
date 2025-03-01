@@ -1,3 +1,19 @@
 .loader {
-    /*свг и/или анимация*/
+    width: 20px;
+    height: 20px;
+    animation: moveAndChangeColor 2s ease-in-out infinite;/*свг и/или анимация*/
+}
+@keyframes moveAndChangeColor {
+    0% {
+        transform: translateX(0); /* Начальное положение */
+        background-color: #3498db; /* Начальный цвет */
+    }
+    50% {
+        transform: translateX(100px); /* Перемещение на 100px вправо */
+        background-color: #e74c3c; /* Цвет меняется на красный */
+    }
+    100% {
+        transform: translateX(0); /* Возвращаемся в исходную позицию */
+        background-color: #3498db; /* Возвращаем начальный цвет */
+    }
 }
